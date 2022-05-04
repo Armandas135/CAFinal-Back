@@ -1,12 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const controller = require('../controllers/mainController')
-const validator = require('../middle/validator')
+const validator = require('../middleware/validator')
 
-router.post('/register', validator.validateRegister, controller.register)
-router.post('/login', validator.validateLogin, controller.login)
-router.post('/check', controller.check)
-router.post('/addthread', validator.validateThread, controller.addThread)
-router.post('/addcomment', validator.validateComment, controller.addComment)
+router.post('/loggedIn', controller.loggedIn)
+router.post('/register', validator.registerValidator, controller.register)
+router.post('/login', validator.loginValidator, controller.login)
+router.post('/newthread', validator.threadValidator, controller.newThread)
+router.post('/newcomment', validator.commentValidator, controller.newComment)
 
 module.exports = router

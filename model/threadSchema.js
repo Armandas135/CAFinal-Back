@@ -1,7 +1,5 @@
 const mongoose = require("mongoose")
-
 const Schema = mongoose.Schema
-
 const threadSchema = new Schema({
     user: {
         type: Object,
@@ -14,8 +12,7 @@ const threadSchema = new Schema({
     comments: {
         type: Array,
         required: true
-    }
+    },
 })
-
 
 module.exports = mongoose.model('threadSchema', threadSchema)
