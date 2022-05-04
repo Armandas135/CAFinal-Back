@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const {v4: uuid} = require("uuid")
 const app = express()
-const mainRouter = require('./routes/mainRouter')
+const mainRouter = require('./routes/main')
 const session = require('express-session')
 require('dotenv').config()
 const {Server} = require("socket.io")
@@ -70,5 +70,6 @@ app.use((req, res, next) => {
 
 app.listen(4000)
 server.listen(4001)
+
 app.use('/', mainRouter)
 
